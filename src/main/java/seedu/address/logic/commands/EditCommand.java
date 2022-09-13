@@ -193,7 +193,7 @@ public class EditCommand extends Command {
         }
 
         public Optional<Remark> getRemark() {
-            return Optional.of(remark);
+            return Optional.ofNullable(remark);
         }
 
         /**
