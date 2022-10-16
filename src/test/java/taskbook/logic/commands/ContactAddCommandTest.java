@@ -170,7 +170,7 @@ public class ContactAddCommandTest {
         }
 
         @Override
-        public void updateFilteredTaskListPredicate(Predicate<Task> predicate) {
+        public void updateFilteredTaskList(Predicate<Task> predicate) {
             throw new AssertionError("This method should not be called.");
         }
 
