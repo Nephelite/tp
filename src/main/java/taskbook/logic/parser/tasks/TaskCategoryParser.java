@@ -4,6 +4,7 @@ import taskbook.commons.core.Messages;
 import taskbook.logic.commands.Command;
 import taskbook.logic.commands.tasks.TaskDeadlineCommand;
 import taskbook.logic.commands.tasks.TaskDeleteCommand;
+import taskbook.logic.commands.tasks.TaskEditCommand;
 import taskbook.logic.commands.tasks.TaskEventCommand;
 import taskbook.logic.commands.tasks.TaskListCommand;
 import taskbook.logic.commands.tasks.TaskSortCommand;
@@ -32,12 +33,14 @@ public class TaskCategoryParser {
             return new TaskDeadlineCommandParser().parse(arguments);
         case TaskEventCommand.COMMAND_WORD:
             return new TaskEventCommandParser().parse(arguments);
+        case TaskEditCommand.COMMAND_WORD:
+            return new TaskEditCommandParser().parse(arguments);
         case TaskDeleteCommand.COMMAND_WORD:
             return new TaskDeleteCommandParser().parse(arguments);
         case TaskListCommand.COMMAND_WORD:
             return new TaskListCommand();
         case TaskSortCommand.COMMAND_WORD:
-            return new TaskSortCommandParser().parse(arguments.trim());
+            return new TaskSortCommandParser().parse(arguments);
         default:
             throw new ParseException(Messages.MESSAGE_UNKNOWN_COMMAND);
         }
